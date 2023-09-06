@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "./api/instance";
-import { Pagination, PaginationItem } from "@mui/material";
+import { Pagination } from "@mui/material";
 
 export default function App() {
   const [products, setProducts] = useState([]);
