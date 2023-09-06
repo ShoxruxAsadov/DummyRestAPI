@@ -62,7 +62,6 @@ export default function App() {
     }
     setSearchProducts(arr);
   }, [searchInput]);
-
   return (
     <section>
       <header>
@@ -114,11 +113,10 @@ export default function App() {
                       {getBuyProductId(item.id) ? (
                         <TbX
                           style={{ fontSize: "26px" }}
-                          onClick={() =>
-                            setBuyProducts(
-                              buyProducts.filter((pro) => pro.id !== item.id)
-                            )
-                          }
+                          onClick={() => {
+                            buyProducts.length == 1 && localStorage.setItem("buyProducts", null);
+                            setBuyProducts(buyProducts.filter((pro) => pro.id !== item.id));
+                          }}
                         />
                       ) : (
                         <TbShoppingCartPlus
@@ -152,11 +150,10 @@ export default function App() {
                       {getBuyProductId(item.id) ? (
                         <TbX
                           style={{ fontSize: "26px" }}
-                          onClick={() =>
-                            setBuyProducts(
-                              buyProducts.filter((pro) => pro.id !== item.id)
-                            )
-                          }
+                          onClick={() => {
+                            buyProducts.length == 1 && localStorage.setItem("buyProducts", null);
+                            setBuyProducts(buyProducts.filter((pro) => pro.id !== item.id));
+                          }}
                         />
                       ) : (
                         <TbShoppingCartPlus
