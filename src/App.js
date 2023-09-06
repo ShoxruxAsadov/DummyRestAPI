@@ -15,7 +15,6 @@ export default function App() {
   };
 
   function getProducts() {
-    console.log("skip: " + skip);
     api
       .get(`/products?limit=${limit}&skip=${skip}`)
       .then(({ data }) => {
@@ -24,13 +23,7 @@ export default function App() {
       });
   }
 
-  useEffect(() => {
-    getProducts();
-  }, [skip]);
-
-  // console.log(skip);
-
-  console.log(products);
+  useEffect(() => getProducts(), [skip]);
 
   return (
     <section>
