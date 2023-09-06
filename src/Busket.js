@@ -19,13 +19,13 @@ export default function Busket() {
   };
 
   function getProducts() {
-    setProducts(JSON.parse(localStorage.getItem("buyProducts")));
-    setTotal(JSON.parse(localStorage.getItem("buyProducts")).length);
+    if (JSON.parse(localStorage.getItem("buyProducts"))) {
+      setProducts(JSON.parse(localStorage.getItem("buyProducts")));
+    }
   }
 
-  useEffect(() => {
-    getProducts();
-  }, [skip]);
+  useEffect(() => getProducts(), [skip]);
+  useEffect(() => setTotal(products.length), [products]);
 
   return (
     <section>
