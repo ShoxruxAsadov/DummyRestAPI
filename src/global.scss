@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+  width: .4em;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #3590f3;
+  border-radius: 1em;
+}
+
+body {
+  font-family: sans-serif;
+  background: #F0F2F5;
+  color: #151515;
+}
+
+section{
+  width: 100%;
+  min-height: 100svh;
+  padding: 20px;
+}
+
